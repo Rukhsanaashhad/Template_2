@@ -26,7 +26,7 @@ const HeaderMenu = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
             }`}
           />
         </Link>
-              {categories?.map((category,headerData) => (
+              {categories?.map((category) => (
         <Link
           key={category?._id}
           href={`/category/${category?.slug?.current}`}

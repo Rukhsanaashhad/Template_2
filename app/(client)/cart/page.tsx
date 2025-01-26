@@ -76,7 +76,7 @@ const CartPage = () => {
     } catch (error) {
       console.error("Error creating checkout session:", error);
     } finally {
-      setLoading(false);
+      setLoading(false);  
     }
   };
 
