@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import QuantityButtons from './QuantityButtons';
 import PriceFormatter from './PriceFormatter';
 import useCartStore from '@/store';
-import { renderToReadableStream } from 'next/dist/server/app-render/entry-base';
+
 
 interface Props{
     product:Product;

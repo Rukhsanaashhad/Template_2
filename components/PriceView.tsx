@@ -3,13 +3,12 @@ import PriceFormatter from './PriceFormatter';
 import { cn } from '@/lib/utils';
 
 interface Props {  
-    price: number | undefined;  
-    features?: string;  
+    price: number | undefined;   
     discount?: number | undefined;  
     className?: string;  
 }  
 
-const PriceView = ({ price, features, discount, className }: Props) => {  
+const PriceView = ({ price, discount, className }: Props) => {  
     return (  
             <div className="flex items-center gap-2"> 
             <PriceFormatter amount={price} className={className} />  

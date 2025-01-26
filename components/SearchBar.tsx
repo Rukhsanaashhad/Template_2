@@ -5,7 +5,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Input } from "./ui/input";
 import { client } from "@/sanity/lib/client";
-import { product } from "@/sanity/schemaTypes/product";
 import { Product } from "@/sanity.types";
 import Link from "next/link";
 import Image from "next/image";
