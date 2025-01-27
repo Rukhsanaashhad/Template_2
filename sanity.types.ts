@@ -273,7 +273,6 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
 export type CATEGORIES_QUERYResult = Array<{
   _id: string;
   _type: "category";
-  
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
