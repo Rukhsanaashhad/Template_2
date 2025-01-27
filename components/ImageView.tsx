@@ -23,7 +23,7 @@ interface Props {
 }
 
 const ImageView = ({ image = [] }: Props) => {  
-    const [active, setActive]= useState(image)  
+    const [active]= useState(image)  
   return (
     <div className="w-full md:w-1/2 space-y-2 md:space-y-4">
      <AnimatePresence mode='wait'>
