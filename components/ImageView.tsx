@@ -1,6 +1,6 @@
 "use client";
 
-import { internalGroqTypeReferenceTo, SanityImageCrop, SanityImageHotspot } from '@/sanity.types';
+import {  SanityImageCrop, SanityImageHotspot } from '@/sanity.types';
 import React, { useState } from 'react'
 import {motion,AnimatePresence} from 'motion/react';  
 import Image from 'next/image';
