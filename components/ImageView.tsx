@@ -1,29 +1,29 @@
 "use client";
 
-import {  SanityImageCrop, SanityImageHotspot } from '@/sanity.types';
+import { internalGroqTypeReferenceTo, SanityImageCrop, SanityImageHotspot } from '@/sanity.types';
 import React, { useState } from 'react'
 import {motion,AnimatePresence} from 'motion/react';  
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/image';
 
 
-interface Props {  
-  image: {  
-      asset: {  
-          _ref: string;  
-          _type: "reference";  
-          _weak: boolean;  
-          title:string  ;
-      };  
-      hotspot?: SanityImageHotspot;  
-      crop?: SanityImageCrop;  
-      _type: "image";  
-      _key: string;  
-  };  
-}  
+interface Props {
+  image?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "image ";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
+}
 
-const ImageView = ({ image }: Props) => {  
-    const [active]= useState(image = image,     )  
+const ImageView = ({ image = [] }: Props) => {  
+    const [active]= useState(image= image)  
   return (
     <div className="w-full md:w-1/2 space-y-2 md:space-y-4">
      <AnimatePresence mode='wait'>
