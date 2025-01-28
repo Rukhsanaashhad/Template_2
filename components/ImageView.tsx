@@ -7,20 +7,20 @@ import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/image';
 
 
-interface Props {
-  image?: Array<{
-    asset?: {
-      _ref: string;
-      _type: "image ";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-    _key: string;
-  }>;
-}
+  interface Props {
+    image?: Array<{
+      asset?: {
+        _ref: string;
+        _type: "image ";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+      _key: string;
+    }>;
+  }
 
 const ImageView = ({ image = [] }: Props) => {  
     const [active]= useState(image= image)  

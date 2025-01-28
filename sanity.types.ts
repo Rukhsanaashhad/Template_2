@@ -242,7 +242,8 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    _type: "image";
+    _type: "image"; //  
+    _key: string;
   };
   price?: number;
   discount?: number;
@@ -331,7 +332,7 @@ export type MY_ORDERS_QUERYResult = Array<{
       quantity?: number;
       tags?: Array<string>;
       description?: string;
-      features?: {
+      features?: {  //  
         features?: string;
         made?: string;
         quality?: string;
