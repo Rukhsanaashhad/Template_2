@@ -1,7 +1,7 @@
 "use client";  
 
 import React, { useState } from 'react';  
-import { motion, AnimatePresence } from 'framer-motion';  
+import { motion, AnimatePresence } from "motion/react";
 import Image from 'next/image';  
 import { urlFor } from '@/sanity/lib/image'; // Adjust as necessary  
 import { internalGroqTypeReferenceTo, SanityImageCrop, SanityImageHotspot } from '@/sanity.types';
