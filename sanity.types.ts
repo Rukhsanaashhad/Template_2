@@ -120,7 +120,7 @@ export type Product = {
   _updatedAt: string;
   _rev: string;
   name?: string;
-  slug?: Slug;
+  slug?: Slug;  
   image?: {
     asset?: {
       _ref: string;
@@ -242,8 +242,7 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    _type: "image"; //  
-    _key: string;
+    _type: "image";
   };
   price?: number;
   discount?: number;
@@ -332,7 +331,7 @@ export type MY_ORDERS_QUERYResult = Array<{
       quantity?: number;
       tags?: Array<string>;
       description?: string;
-      features?: {  //  
+      features?: {
         features?: string;
         made?: string;
         quality?: string;

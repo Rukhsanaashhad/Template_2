@@ -1,8 +1,8 @@
 
+
 import AddToCartButton from "@/components/AddToCartButton";
 import Container from "@/components/Container";
 import ImageView from "@/components/ImageView";
-
 import PriceView from "@/components/PriceView";
 import ProductCharacteristics from "@/components/ProductCharacteristics";
 import { getProductBySlug } from "@/sanity/helpers/queries";
@@ -13,25 +13,24 @@ import {
   ListOrderedIcon,
   Share,
 } from "lucide-react";
+import { notFound } from "next/navigation";
 import React from "react";
-
 
 const SingleProductPage = async ({
   params,
 }: {
-  params: Promise<{ slug: string }>;  
+  params: Promise<{ slug: string }>;
 }) => {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   if (!product) {
-    return 
+    return notFound();
   }
 
   return (
     <Container className="py-10 flex flex-col md:flex-row gap-10">
-       {product?.image && <ImageView image={product?.image }/>}
-
-      <div className="w-full md:w-1/2 flex flex-col gap-5"> 
+      {product?.image && <ImageView image={product?.image} />}
+      <div className="w-full md:w-1/2 flex flex-col gap-5">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold mb-2">
             {product?.name}

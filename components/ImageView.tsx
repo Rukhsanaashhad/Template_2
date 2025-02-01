@@ -1,33 +1,39 @@
-"use client";
+"use client";  
 
-import React, { useState } from 'react'
-import {motion,AnimatePresence} from 'motion/react';  
-import Image from 'next/image';
-import { urlFor } from '@/sanity/lib/image';
+import React, { useState } from 'react';  
+import { motion, AnimatePresence } from 'framer-motion';  
+import Image from 'next/image';  
+import { urlFor } from '@/sanity/lib/image'; // Adjust as necessary  
 
+// Define types for the props  
+type ImageViewProps = {  
+  image: {  
+     // Specify that url is a string  
+  };  
+};  
 
+const ImageView: React.FC<ImageViewProps> = ({ image }) => {  
+  const [active] = useState(image);  
 
-const ImageView = ({ image = [] }: any  ) => {
- 
-    const [active]= useState(image= image)  
-  return (
-    <div className="w-full md:w-1/2 space-y-2 md:space-y-4">
-     <AnimatePresence mode='wait'>
-        <motion.div className="w-full max-h-[550px] min-h-[450px] border border-darkColor/10 rounded-md group overflow-hidden">
-            <Image src={urlFor(active).url()} alt="product Image"
-            width={700}
-            height={700}
-            priority
-            className=" bg-gray-300 max-h-[550px] min-h-[500px] object-contain group-hover:scale-110 hoverEffect rounded-md"
-            />
-        </motion.div>
-     </AnimatePresence>                  
-    
-    </div>
-  )
-}
+  return (  
+    <div className="w-full md:w-1/2 space-y-2 md:space-y-4">  
+      <AnimatePresence mode="wait">  
+        <motion.div className="w-full max-h-[550px] min-h-[450px] border border-darkColor/10 rounded-md group overflow-hidden">  
+          <Image  
+            src={urlFor(active).url()} // Ensure `urlFor` returns a valid image URL  
+            alt="Product Image"  
+            width={700}  
+            height={700}  
+            priority  
+            className="bg-gray-300 max-h-[550px] min-h-[500px] object-contain group-hover:scale-110 hoverEffect rounded-md"  
+          />  
+        </motion.div>  
+      </AnimatePresence>  
+    </div>  
+  );  
+};  
 
-export default ImageView
+export default ImageView;
 
 
 {/*
