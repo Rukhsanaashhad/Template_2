@@ -4,14 +4,26 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';  
 import Image from 'next/image';  
 import { urlFor } from '@/sanity/lib/image'; // Adjust as necessary  
+import { internalGroqTypeReferenceTo, SanityImageCrop, SanityImageHotspot } from '@/sanity.types';
 
-// Define types for the props  
-type ImageViewProps = {  
-  image:any    // Specify that url is a string  
-};  
 
-const ImageView: React.FC<ImageViewProps> = ({ image }) => {  
-  const [active] = useState(image);  
+interface Props {
+  image?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
+} 
+
+const ImageView = ({ image = [] }: Props) => {
+  const [active] = useState(image);
 
   return (  
     <div className="w-full md:w-1/2 space-y-2 md:space-y-4">  

@@ -31,7 +31,7 @@ const SingleProductPage = async ({
     <Container className="py-10 flex flex-col md:flex-row gap-10">
       {product?.image && <ImageView image={product?.image} />}
       <div className="w-full md:w-1/2 flex flex-col gap-5">
-        <div>
+        <div> 
           <h2 className="text-3xl md:text-4xl font-bold mb-2">
             {product?.name}
           </h2>
