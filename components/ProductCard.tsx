@@ -12,9 +12,9 @@ const ProductCard = ({product} : {product: Product}) => {
   return (
   <div className="group text-sm rounded-lg overflow-hidden">
     <div className="bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-200 overflow-hidden relative"> 
-    {product?.images && (
+    {product?.image && (
         <Link href={`/product/${product?.slug?.current}`}>
-    <Image src={urlFor(product?.images).url()} 
+    <Image src={urlFor(product?.image).url()} 
     width={500} 
     height={500}
      alt="product"

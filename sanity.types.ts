@@ -134,7 +134,7 @@ export type Product = {
     _rev: string;
     name?: string;
     slug?: Slug;
-    images?: Array<{
+    image?: Array<{
       asset?: {
         _ref: string;
         _type: "reference";

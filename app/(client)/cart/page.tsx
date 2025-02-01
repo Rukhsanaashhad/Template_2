@@ -102,13 +102,13 @@ const CartPage = () => {
                           className="border-b p-2.5 last:border-b-0 flex items-center justify-between gap-5"
                         >
                           <div className="flex flex-1 items-center gap-2 h-36 md:h-44">
-                            {product?.images && (
+                            {product?.image && (
                               <Link
                                 href={`/product/${product?.slug?.current}`}
                                 className="border p-0.5 md:p-1 mr-2 rounded-md overflow-hidden group"
                               >
                                 <Image
-                                  src={urlFor(product?.images).url()}
+                                  src={urlFor(product?.image).url()}
                                   alt="productImage"
                                   width={500}
                                   height={500}

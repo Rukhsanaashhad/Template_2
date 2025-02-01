@@ -50,8 +50,8 @@ export async function createCheckoutSession(
             description: item.product.description,
             metadata: { id: item.product._id },
             images:
-              item.product.images && item.product.images.length > 0
-                ? [urlFor(item.product.images).url()]
+              item.product.image && item.product.image.length > 0
+                ? [urlFor(item.product.image).url()]
                 : undefined,
           },
         },
