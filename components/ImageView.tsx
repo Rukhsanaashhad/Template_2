@@ -7,8 +7,7 @@ import { urlFor } from '@/sanity/lib/image'; // Adjust as necessary
 
 // Define types for the props  
 type ImageViewProps = {  
-  image: string  
-     // Specify that url is a string  
+  image:any    // Specify that url is a string  
 };  
 
 const ImageView: React.FC<ImageViewProps> = ({ image }) => {  
