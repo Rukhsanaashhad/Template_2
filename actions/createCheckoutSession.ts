@@ -39,7 +39,7 @@ export async function createCheckoutSession(
         enabled: true,
       },
       success_url: `https://max-giaic.vercel.app/success?session_id={CHECKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`,
-      cancel_url: `https://max-giaic.vercel.app/cart`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cart`,
       line_items: items.map((item) => ({
         price_data: {
           currency: "USD",
